@@ -86,7 +86,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -109,4 +109,8 @@ input[type="number"] {
   .tip-calculator-wrapper {
     flex-direction: column;
   }
+}
+
+.input-bar input::placeholder {
+  color: var(--clr-very-dark-cyan);
 }
