@@ -21,9 +21,7 @@ export default function App() {
     if (peopleNumber === 0) {
       setTipAmount(0);
     } else {
-      setTipAmount(
-        Number((bill * tipPercentage) / (peopleNumber * 100).toFixed(2))
-      );
+      setTipAmount(((bill * tipPercentage) / (peopleNumber * 100)).toFixed(2));
     }
     console.log(tipAmount);
   }, [bill, peopleNumber, tipPercentage]);
