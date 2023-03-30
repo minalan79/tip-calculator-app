@@ -21,10 +21,18 @@ export default function App() {
     if (peopleNumber === 0) {
       setTipAmount(0);
     } else {
-      setTipAmount((bill * tipPercentage) / peopleNumber);
+      setTipAmount(
+        Number((bill * tipPercentage) / (peopleNumber * 100).toFixed(2))
+      );
     }
     console.log(tipAmount);
   }, [bill, peopleNumber, tipPercentage]);
+
+  useEffect(() => {
+    if (Number(tipAmount) > 0) {
+      setTotal((tipAmount + bill) / peopleNumber);
+    }
+  }, [tipAmount]);
 
   return (
     <div className="App">
